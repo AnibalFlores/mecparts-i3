@@ -1,0 +1,25 @@
+<!-- <ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Operarios</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let ope of operarios">
+       <ion-row center>
+    <ion-col text-center>
+     <button ion-button color="primary" round full large (click)="validarOperario(ope.id)">{{ ope.apellido }}, {{ ope.nombre }}</button>
+      </ion-col>
+  </ion-row>
+    </ion-item>
+  </ion-list>
+
+  <ion-row center>
+    <ion-col text-center>
+      <button ion-button color="secondary" round full large (click)="soyOtroOperario()">Soy otro operador</button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

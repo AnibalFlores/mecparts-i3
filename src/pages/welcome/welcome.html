@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mec-Parts</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="editarPreferencias()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!id" center >
+  <ion-title>Mec-Parts</ion-title>
+  <ion-list radio-group>
+    <ion-list-header>
+      Servidor Desconectado
+      <ion-icon name="cod" item-start></ion-icon>
+    </ion-list-header>
+  </ion-list>
+</ion-content>
+
+<ion-content *ngIf="id" center >
+  <ion-title>Terminal {{ id }}</ion-title>
+  <ion-list>
+    <ion-list-header>
+      Servidor conectado
+      <ion-icon name="wifi" item-start></ion-icon>
+    </ion-list-header>
+  </ion-list>
+  <ion-row center>
+    <ion-col text-center>
+      <button ion-button color="secondary" round full large (click)="empezar()">Empezar</button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
