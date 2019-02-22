@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-searchbar placeholder="Buscar código" [(ngModel)]="Termino" [formControl]="busquedaControl" (ionInput)="buscar()"></ion-searchbar>
+</ion-header> 
+ 
+<ion-content>
+ 
+    
+ 
+    <div *ngIf="searching" class="spinner-container">
+      <ion-spinner></ion-spinner>
+    </div>
+
+    <ion-list>
+        <ion-item *ngFor="let par of partes" href="#">
+               <ion-row center>
+    <ion-col text-center>
+     <button ion-button color="primary" round full large (click)="seleccionaParte(par.id)">{{ par.codigo }}</button>
+      </ion-col>
+  </ion-row>
+        </ion-item>
+    </ion-list>
+ 
+</ion-content>

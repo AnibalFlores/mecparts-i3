@@ -7,13 +7,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
-
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PinDialog } from '@ionic-native/pin-dialog';
 import { DataServiceProvider } from '../providers/data-service/data-service';
 import { PreferenciasPage } from '../pages/preferencias/preferencias';
+import { Dialogs } from '@ionic-native/dialogs';
+import { ProductoPage } from '../pages/producto/producto';
 
 
 @NgModule({
@@ -22,6 +22,7 @@ import { PreferenciasPage } from '../pages/preferencias/preferencias';
     WelcomePage,
     HomePage,
     PinPage,
+    ProductoPage,
     PreferenciasPage
   ],
   imports: [
@@ -36,6 +37,7 @@ import { PreferenciasPage } from '../pages/preferencias/preferencias';
     WelcomePage,
     HomePage,
     PinPage,
+    ProductoPage,
     PreferenciasPage
   ],
   providers: [
@@ -43,6 +45,7 @@ import { PreferenciasPage } from '../pages/preferencias/preferencias';
     DataServiceProvider,
     SplashScreen,
     PinDialog,
+    Dialogs,
     {provide: ErrorHandler, useClass: IonicErrorHandler}    
   ]
 })

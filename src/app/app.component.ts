@@ -5,19 +5,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
 
 import { WelcomePage } from '../pages/welcome/welcome';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage: any = WelcomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, private splashScreen: SplashScreen, private storage: Storage) {
+  constructor(
+    platform: Platform,
+     statusBar: StatusBar,
+      private splashScreen: SplashScreen,
+       private storage: Storage
+       ) {
     platform.ready().then(() => {
-      //setTimeout(() => {
-       // this.splashScreen.hide();
-      //}, 1000);
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
+
       statusBar.styleDefault();
       this.storage.ready().then(() => { this.splashScreen.hide(); });
 
