@@ -41,18 +41,19 @@ export class PinPage {
 
   }
 
-  validarOperario(id: number) {
+  validarOperario(ope: Operario) {
     // apila otra pagina en la pila del historial
     // causa que el nav controller haga animacion de ingreso a pagina nueva
     this.pinDialog.prompt('Ingrese su PIN', 'Verifica PIN', ['OK', 'Cancelar'])
       .then(
         (result: any) => {
           if (result.buttonIndex == 1) {
-            console.log('Usuario'+ id +' dio OK, el pin es: ', result.input1);
-            this.dataSrv.loginOperador(id, result.input1)
+            console.log('Usuario'+ ope.id +' dio OK, el pin es: ', result.input1);
+            this.dataSrv.loginOperador(ope.id, result.input1)
               .subscribe((res: any) => {
                 console.log(res);
                 if (res) {
+                  this.dataSrv.oper = ope; // guardamos el operario en el dataservice
                   this.navCtrl.push(ProductoPage);// aca vamos a la pagina de destino nueva
                   // console.log('Pin correcto debemos saltar a otra page');
                 }

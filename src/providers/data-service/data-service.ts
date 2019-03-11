@@ -3,6 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Parte } from '../../app/models/parte';
+import { Maquina } from '../../app/models/maquina';
+import { Operario } from '../../app/models/operario';
+import { Reporte } from '../../app/models/reporte';
 
 /*
   Generated class for the DataServiceProvider provider.
@@ -21,15 +24,17 @@ export class DataServiceProvider {
   id: number;
   baseUrl: String;
   partes: Parte[] = [];
-  maq: number;
-  oper: number;
-  part: number;
+  maq: Maquina;
+  oper: Operario;
+  part: Parte;
+  reporte: Reporte;
 
   constructor(private storage: Storage, public http: HttpClient) {
     // Leemos del dispositivo el id y la url base
     // TODO: verificar si estos datos no estan definidos para que lleve a la pagina de
     // preferencias con un formulario para editar dichos valores por el admin con una clave
     // local secreta para esa persona encargada de configurar las tablets
+    this.reporte = new Reporte();
     this.storage.get('id').then((res) => { console.log(res); this.id = res; });
     this.storage.get('baseUrl').then((res) => {
        // console.log(res);

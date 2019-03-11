@@ -1,0 +1,33 @@
+<!--
+  Generated template for the PapPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>pap</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+
+<ion-content padding>
+
+  <ion-row center>
+    <ion-col text-center>
+      <button ion-button color="primary" round full large (click)="irmecanizado()">FIN PAP\nInicio Mecanizado</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+    <ion-list-header>
+      Operario: {{ labor.operario.apellido }}, {{ labor.operario.nombre }}
+      <ion-icon name="person" item-start></ion-icon>
+      <ion-icon name="cog"></ion-icon>
+      Código de Parte: {{ labor.parte.codigo }}
+    </ion-list-header>
+  </ion-list>
+
+</ion-content>

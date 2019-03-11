@@ -4,6 +4,7 @@ import { Parte } from '../../app/models/parte';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 import { FormControl } from '@angular/forms';
 import 'rxjs/add/operator/debounceTime';
+import { OciosoPage } from '../ocioso/ocioso';
 
 @IonicPage()
 @Component({
@@ -36,7 +37,9 @@ export class ProductoPage {
       this.partes = this.dataSrv.filtraPartes(this.Termino);
   }
 
-  seleccionaParte(id: number){
-    console.log('Parte elegida: ' + id);
+  seleccionaParte(part: Parte){
+    this.dataSrv.part = part; // guardamos la parte en el dataservice
+    console.log('Parte elegida: ' + part.id);
+    this.navCtrl.push(OciosoPage);
   }
 }

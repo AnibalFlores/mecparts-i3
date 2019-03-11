@@ -13,7 +13,7 @@
     <ion-item *ngFor="let maq of maquinas; let i = index;">
      <ion-row center>
       <ion-col text-center>
-      <button ion-button color="primary" round full large (click)="loguearOperador(maq.id)">{{ maq.nombre }}</button>
+      <button ion-button color="primary" round full large (click)="loguearOperador(maq)">{{ maq.nombre }}</button>
       </ion-col>
      </ion-row>
     </ion-item>

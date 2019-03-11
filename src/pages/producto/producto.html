@@ -14,7 +14,7 @@
         <ion-item *ngFor="let par of partes" href="#">
                <ion-row center>
     <ion-col text-center>
-     <button ion-button color="primary" round full large (click)="seleccionaParte(par.id)">{{ par.codigo }}</button>
+     <button ion-button color="primary" round full large (click)="seleccionaParte(par)">{{ par.codigo }}</button>
       </ion-col>
   </ion-row>
         </ion-item>

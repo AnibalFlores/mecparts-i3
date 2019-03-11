@@ -1,3 +1,7 @@
+import { NotaPage } from './../pages/nota/nota';
+import { PapPage } from './../pages/pap/pap';
+import { MecanizadoPage } from './../pages/mecanizado/mecanizado';
+import { OciosoPage } from './../pages/ocioso/ocioso';
 import { WelcomePage } from './../pages/welcome/welcome';
 import { PinPage } from './../pages/pin/pin';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +18,7 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
 import { PreferenciasPage } from '../pages/preferencias/preferencias';
 import { Dialogs } from '@ionic-native/dialogs';
 import { ProductoPage } from '../pages/producto/producto';
+import { ReportePage } from '../pages/reporte/reporte';
 
 
 @NgModule({
@@ -23,6 +28,11 @@ import { ProductoPage } from '../pages/producto/producto';
     HomePage,
     PinPage,
     ProductoPage,
+    OciosoPage,
+    MecanizadoPage,
+    PapPage,
+    ReportePage,
+    NotaPage,
     PreferenciasPage
   ],
   imports: [
@@ -38,6 +48,11 @@ import { ProductoPage } from '../pages/producto/producto';
     HomePage,
     PinPage,
     ProductoPage,
+    OciosoPage,
+    MecanizadoPage,
+    PapPage,
+    ReportePage,
+    NotaPage,
     PreferenciasPage
   ],
   providers: [

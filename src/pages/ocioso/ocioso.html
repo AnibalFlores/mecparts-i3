@@ -1,0 +1,50 @@
+<!--
+  Generated template for the OciosoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Tiempo Ocioso</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+<ion-content *ngIf="!labor" center>
+  <ion-title>La labor no ha podido generarse revise sus datos</ion-title>
+  <ion-row center>
+      <ion-col text-center>
+        <button ion-button color="primary" round full large (click)="irprincipio()">Salir</button>
+      </ion-col>
+    </ion-row>
+</ion-content>
+
+<ion-content *ngIf="labor" center>
+  <ion-title>Seleccione su siguiente tarea</ion-title>
+  <ion-title></ion-title>
+  <ion-row center>
+    <ion-col text-center>
+      <button ion-button color="primary" round full large (click)="irmecanizar()">Mecanizar</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row center>
+    <ion-col text-center>
+      <button ion-button color="primary" round full large (click)="irpap()">PAP</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+    <ion-list-header>
+        Operario: {{ labor.operario.apellido }}, {{ labor.operario.nombre }}
+      <ion-icon name="person" item-start></ion-icon>
+      <ion-icon name="cog"></ion-icon>
+      Código de Parte: {{ labor.parte.codigo }} 
+      
+    </ion-list-header>
+  </ion-list>
+
+
+</ion-content>

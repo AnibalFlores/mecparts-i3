@@ -10,7 +10,7 @@
     <ion-item *ngFor="let ope of operarios">
        <ion-row center>
     <ion-col text-center>
-     <button ion-button color="primary" round full large (click)="validarOperario(ope.id)">{{ ope.apellido }}, {{ ope.nombre }}</button>
+     <button ion-button color="primary" round full large (click)="validarOperario(ope)">{{ ope.apellido }}, {{ ope.nombre }}</button>
       </ion-col>
   </ion-row>
     </ion-item>

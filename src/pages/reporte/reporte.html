@@ -1,0 +1,65 @@
+<!--
+  Generated template for the ReportePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cantidades</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+<ion-content padding *ngIf="!repo">
+  <ion-row center>
+    <ion-col text-center>
+      <ion-title>Verifique sus datos Reporte sin datos</ion-title>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-content padding *ngIf="repo">
+  <ion-row center>
+    <ion-col text-center>
+      <ion-title>Verifique sus datos antes de finalizar</ion-title>
+    </ion-col>
+  </ion-row>
+
+  <ion-item>
+    <ion-label>Mecanizadas</ion-label>
+    <ion-input type="number" [(ngModel)]="repo.mecanizadas"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Aptas</ion-label>
+    <ion-input type="number" [(ngModel)]="repo.aptas"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">Rechazos</ion-label>
+    <ion-input type="number" [(ngModel)]="repo.rechazos"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Terminadas</ion-label>
+    <ion-checkbox [(ngModel)]="repo.terminadas"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>A terminar</ion-label>
+    <ion-checkbox [(ngModel)]="repo.aterminar"></ion-checkbox>
+  </ion-item>
+  <ion-row center>
+    <ion-col text-center>
+      <button ion-button color="primary" round full large (click)="irfinalizar()">Listo</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row center>
+    <ion-col text-center>
+      <button ion-button color="medium" round full large (click)="irnotas()">Observaciones</button>
+    </ion-col>
+  </ion-row>
+</ion-content>
